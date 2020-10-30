@@ -1,0 +1,73 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body .error {
+  background-color: red;
+  &::placeholder {
+    color: white;
+  }
+}
+
+::placeholder {
+  color: #666;
+  font-size: 16px;
+}
+
+:focus::placeholder {
+  color: transparent;
+}
+
+::selection {
+  background-color: $accent_1;
+  color: #fff;
+}
+
+body {
+  font-size: 20px;
+  width: 100%;
+  max-width: 1940px;
+  margin: 0 auto;
+  position: relative;
+  line-height: 1.65;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  background-color: $bgr;
+  input, textarea {
+    font-family: $default-font;
+    border: #666 1px solid;
+    outline: none;
+    &:focus:required:invalid {
+      border-color: red;
+    }
+    &:required:valid {
+      border-color: green;
+    }
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-size: 40px;
+}
+
+@import "blocks/header";
+@import "blocks/main";
